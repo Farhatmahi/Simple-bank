@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bank</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              clifford: "#da373d",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body>
+    <main class="h-screen flex flex-col justify-center">
+      <h1 class="text-5xl text-center font-bold drop-shadow-md">
+        Deposit and withdraw to your father's bank
+      </h1>
+
+      <!-- deposit, withdraw and balance  -->
+      <section class="mt-12 w-100">
+        <div class="grid sm:grid-cols-1 md:grid-cols-3 text-center sm:text-center lg:text-left gap-6 w-3/4 mx-auto">
+          <div class="bg-white p-8 rounded-xl drop-shadow-xl">
+            <h1 class="text-xl" >Deposit</h1>
+            <h2 class="text-5xl">$<span  id="depositTotal">00</span></h2>
+          </div>
+
+          <div class="bg-white p-8 rounded-xl drop-shadow-xl">
+            <h1 class="text-xl">Withdraw</h1>
+            <h2 class="text-5xl">$<span id="withdrawTotal">00</span></h2>
+          </div>
+
+          <div class="bg-white p-8 rounded-xl drop-shadow-xl">
+            <h1 class="text-xl">Balance</h1>
+            <h2 class="text-5xl">$<span id="balanceTotal">1200</span></h2>
+          </div>
+        </div>
+
+        <!-- input  -->
+        <div class="grid sm:grid-cols-1 md:grid-cols-2 gap-6 w-3/4 mx-auto my-12">
+          <div class="bg-white p-8 rounded-xl drop-shadow-lg">
+            <h1 class="text-xl font-semibold">
+              Please enter the amount of deposit
+            </h1>
+            <input
+              id="deposit-field"
+              type="text"
+              class="block w-100 px-2 my-2 border rounded-md border-black-300"
+            />
+            <button
+              id="btn-deposit"
+              class="drop-shadow-xl bg-white px-3 py-2 mt-3 rounded-lg hover:bg-slate-400 hover:text-white"
+            >
+              Deposit
+            </button>
+          </div>
+          <div class="bg-white p-8 rounded-xl drop-shadow-lg">
+            <h1 class="text-xl font-semibold">
+              Please enter the amount of withdraw
+            </h1>
+            <input
+              id="withdraw-field"
+              type="text"
+              class="block w-100 px-2 my-2 border rounded-md border-black-300"
+            />
+            <button
+              id="btn-withdraw"
+              class="drop-shadow-xl bg-white px-3 py-2 mt-3 rounded-lg hover:bg-slate-400 hover:text-white"
+            >
+              Withdraw
+            </button>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script src="./deposit.js"></script>
+    <script src="./withdraw.js"></script>
+
+  </body>
+</html>
