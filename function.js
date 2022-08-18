@@ -1,3 +1,4 @@
+//this function will return the value of the input field
 function getInputValue(inputId) {
   const inputField = document.getElementById(inputId);
   const inputFieldStringValue = inputField.value;
@@ -6,6 +7,7 @@ function getInputValue(inputId) {
   return inputFieldValue;
 }
 
+//this function will return the innerText of the elementId
 function getInnerText(elementId) {
   const text = document.getElementById(elementId);
   const textStringInnerText = text.innerText;
@@ -13,63 +15,15 @@ function getInnerText(elementId) {
   return textInnerText;
 }
 
-//set text value
+//this function will set the text in the total
 function setText(id, newValue) {
   const textElement = document.getElementById(id);
   textElement.innerText = newValue;
 }
 
+//this function will add the new amount to the total amount
 function setter(id, newDeposit) {
-      const previousTotal = getInnerText(id);
-      const newTotal = previousTotal + newDeposit;
-      setText(id, newTotal);
-    }
-
-document.getElementById("btn-deposit").addEventListener("click", () => {
-  //get the new Deposit from input
-  const newDeposit = getInputValue("deposit-field");
-  if(isNaN(newDeposit)){
-      alert("Please enter a valid amount");
-      return;
-  }
-  setter("depositTotal", newDeposit);
-  setter("balanceTotal", newDeposit);
-
-});
-
-
-document.getElementById("btn-withdraw").addEventListener("click", () => {
-      const newWithdraw = getInputValue("withdraw-field");
-      console.log(newWithdraw)
-      if(isNaN(newWithdraw)){
-            alert("Please enter a valid amount");
-            return;
-      }
-      if(newWithdraw > getInnerText("balanceTotal")){
-            alert("You don't have enough funds");
-            return;
-      }
-      else{
-            setter("withdrawTotal", newWithdraw);
-      
-            setter("balanceTotal", -newWithdraw);
-      }
-})
-
-
-
-  // //the old deposit amount
-  // const previousDepositTotal = getInnerText("depositTotal");
-
-  // //new + previousDepositTotal
-  // const newDepositTotal = newDeposit + previousDepositTotal;
-
-  // //get the new Deposit
-  // setText("depositTotal", newDepositTotal);
-
-  // //get previous balance total
-  // const previousBalance = getInnerText("balanceTotal");
-
-  // const newBalanceTotal = previousBalance + newDepositTotal;
-
-  // setText("balanceTotal", newBalanceTotal)
+  const previousTotal = getInnerText(id);
+  const newTotal = previousTotal + newDeposit;
+  setText(id, newTotal);
+}
